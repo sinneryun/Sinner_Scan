@@ -35,9 +35,7 @@
 @property(assign,nonatomic)CGFloat yyy;
 @end
 
-@implementation ViewController{
-    int i;
-}
+@implementation ViewController
 
 /// 重写 imgView的frame。 yyy不是常量，是一个属性
 -(void)setYyy:(CGFloat)yyy{
@@ -51,7 +49,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    i=1;
     _yyy = self.imgView.frame.origin.y;
     
     
@@ -198,7 +195,6 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
     NSString *stringValue;
-    i++;
     if ([metadataObjects count] >0)
     {
         //停止扫描
@@ -206,7 +202,7 @@
         
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
         stringValue = metadataObject.stringValue;
-        NSLog(@"%@-%d",stringValue,i);
+        NSLog(@"%@",stringValue);
         
     } else {
         NSLog(@"无扫描信息");
