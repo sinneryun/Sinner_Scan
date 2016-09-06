@@ -198,7 +198,7 @@
     if ([metadataObjects count] >0)
     {
         //停止扫描
-        //[_session stopRunning];
+        [_session stopRunning];
         
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
         stringValue = metadataObject.stringValue;
